@@ -1,3 +1,9 @@
-function qr(matrixA) {
-
+function qr(inputMatrix:Mat){
+    let raw2DArray = inputMatrix.val;
+    let result = mathjs.qr(raw2DArray);
+    return {
+        Q: mat(result.Q),
+        R: mat(result.R)
+    }
 }
+
