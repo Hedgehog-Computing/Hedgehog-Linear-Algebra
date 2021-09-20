@@ -1,0 +1,9 @@
+function lup(inputMatrix:Mat){
+    let raw2DArray = inputMatrix.val;
+    let result = mathjs.lup(raw2DArray);
+    return {
+        L: mat(result.L),
+        U: mat(result.U),
+        p: mat(result.p)
+    }
+}
