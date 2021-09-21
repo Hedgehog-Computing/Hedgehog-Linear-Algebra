@@ -1,4 +1,4 @@
 {
     "name":"LinearAlgebra",
-    "includes" : ["qr, lup, trace, cholesky, isSymmetric"]
+    "includes" : ["qr", "lup", "trace", "cholesky", "isSymmetric"]
 }
