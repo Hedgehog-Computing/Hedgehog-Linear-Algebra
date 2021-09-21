@@ -1,0 +1,36 @@
+function cholesky(inputMatrix:Mat) {
+  L: Mat;
+  if(inputMatrix.rows !== inputMatrix.cols || inputMatrix.rows == 0 || inputMatrix.cols == 0) {
+    throw new Error('Wrong dimension for'+inputMatrix);
+  }
+
+  if(!inputMatrix.equals(inputMatrix.transpose())) {
+    throw new Error('Matrix is not symmetric:'+inputMatrix)
+  }
+
+  /*if (!isSymmetric(inputMatrix)) { throw new Error('Not symmetric')} */
+
+    //dimension n
+    const n = inputMatrix.rows;
+
+    //matrix L
+    const L = new Mat().zeros(n, n);
+
+    //iteration
+    for (let i = 0; i < n; i++) {
+      for (let k = 0; k < i + 1; k++) {
+        let sum = 0;
+        for (let j = 0; j < k; j++) {
+          sum += L.val[i][j] * L.val[k][j];
+        }
+
+        if (i === k) {
+          L.val[i][k] = Math.sqrt(inputMatrix.val[i][i] - sum);
+        } else {
+          L.val[i][k] = (1.0 / L.val[k][k]) * (inputMatrix.val[i][k] - sum);
+        }
+      }
+    }
+
+    return L;
+}
