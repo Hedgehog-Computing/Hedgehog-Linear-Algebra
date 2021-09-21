@@ -1,0 +1,9 @@
+function isSymmetric(inputMatrix:Mat) {
+  if(inputMatrix.rows !== inputMatrix.cols || inputMatrix.rows == 0 || inputMatrix.cols == 0) {
+      return false;
+  }
+  if (!inputMatrix.equals(inputMatrix.transpose())) {
+    return false;
+  }
+  return true;
+}
