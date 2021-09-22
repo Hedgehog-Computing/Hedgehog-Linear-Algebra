@@ -1,0 +1,14 @@
+function det(inputMatrix:Mat) {
+  if (inputMatrix.rows !== inputMatrix.cols) {
+    throw new Error('Not square; no determinant')
+  }
+  if (inputMatrix.rows == 0 || inputMatrix.cols == 0) {
+    throw new Error('Dimension error on argument')
+  }
+
+  raw_input = inputMatrix.val;
+
+  return mathjs.det(raw_input)
+
+
+}
