@@ -1,3 +1,11 @@
+/*
+
+This is the function for QR factorization of a matrix
+Input: inputMatrix
+Output: object of Q and R matrix
+
+*/
+
 function qr(inputMatrix:Mat){
     let raw2DArray = inputMatrix.val;
     let result = mathjs.qr(raw2DArray);
